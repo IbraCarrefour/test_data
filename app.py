@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import joblib
 import torch 
-#from classe.classes import *
 
 st.header("Classification")
 
@@ -43,12 +42,6 @@ data = get_data()
 scaler = joblib.load("modèles/scaler.pkl")
 linear_regression = joblib.load("modèles/linear_regression.sav")
 
-#model_cnn = BinaryClassifierCNN()
-#model_cnn.load_state_dict(torch.load('modèles/model.pth'))
-#model_cnn.eval()
-
-#model_mlp = torch.load('model_mlp.pt')
-
 # Data transformation
 data = scaler.transform(data)
 
@@ -57,5 +50,3 @@ data = scaler.transform(data)
 - 0 pour NON
 - 1 pour OUI"""
 st.write("La prédiction est : ",linear_regression.predict(data)[0])
-
-#model_cnn(data)
